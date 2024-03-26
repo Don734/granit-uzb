@@ -1,6 +1,9 @@
 //BASE
-@import 'includes/base/_fonts';
-@import 'includes/base/_vars';
-@import 'includes/base/_body';
+@import './includes/base/_vars';
+@import './includes/base/_default';
+@import './includes/base/_mixins';
+
+//FONTS
+@import './includes/base/_fonts';
 
 // MODULES
