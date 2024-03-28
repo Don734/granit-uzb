@@ -1,0 +1,54 @@
+.main {
+    height: 100%;
+
+    .swiper-main {
+        width: 100%;
+        height: 100%;
+    }
+
+    .row {
+        height: 100%;
+
+        .col {
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            .wrap {
+                padding: 80px 30px;
+
+                .col-title {
+                    font-size: 30px;
+                    font-weight: 600;
+                    color: $white;
+                }
+            }
+        }
+
+        .slider-col {
+            padding: 0;
+
+            .swiper-img {
+                height: 100%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        .about-col {
+            background-image: url("../images/about.jpg");
+        }
+
+        .project-col {
+            background-image: url("../images/project.jpg");
+        }
+
+        .service-col {
+            background-image: url("../images/service.jpg");
+        }
+
+    }
+}
