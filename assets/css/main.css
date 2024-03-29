@@ -13111,6 +13111,60 @@ a {
   box-sizing: border-box;
 }
 
+#preloader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgb(68, 192, 240);
+  z-index: 1000;
+}
+#preloader .counter {
+  font-size: 72px;
+  font-weight: 900;
+  color: #fff;
+}
+#preloader .wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 30vw;
+  text-align: center;
+}
+#preloader .wrap .text {
+  font-size: 26px;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  z-index: 1;
+}
+#preloader .wrap .loadbar {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 0%;
+  height: 1px;
+  margin: 0 auto;
+  background: #fff;
+}
+#preloader .wrap .loadbar .inner-loadbar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 0%;
+  height: 3px;
+  margin: 0 auto;
+  background: rgb(68, 192, 240);
+}
+
 @font-face {
   font-family: "RF Dewi Extended";
   src: local("RF Dewi Extended type"), local("RFDewiExtended-type"), url("./fonts/RFDewi/RFDewiExtended-Thin.eot?#iefix") format("embedded-opentype"), url("./fonts/RFDewi/RFDewiExtended-Thin.woff") format("woff"), url("./fonts/RFDewi/RFDewiExtended-Thin.ttf") format("truetype");

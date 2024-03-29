@@ -1,4 +1,45 @@
 const protoInit = {
+    preloaderInit() {
+        let width = 100
+        perfData = window.performance.timing
+        EstimatedTime = -(perfData.loadEventEnd - perfData.navigationStart)
+        time = ((EstimatedTime / 1000) % 50) * 10;
+
+        $('.loadbar').animate({
+            width: width + "%"
+        }, time / 0.8);
+
+        let preloader__count = document.querySelector('#preloader .counter'),
+            start = 0,
+            end = 100,
+            duration = time + 400;
+            animateValue(preloader__count, start, end, duration);
+
+
+        setTimeout(() => {
+            gsap.to('.inner-loadbar', {force3D: true, width: '100%', duration: 1, delay: 0.1, ease: 'Power2.easeOut', onComplete: () => {
+                gsap.set('.loadbar', {visibility: 'hidden', opacity: 0});
+                gsap.to('#preloader', {force3D: true, duration: 0.7, yPercent: -101, delay: 0.6, ease: 'Power2.easeInOut'});
+            }});
+        }, time)
+
+
+        function animateValue(id, start, end, duration) {
+            let range = end - start,
+                current = start,
+                increment = end > start ? 1 : -1,
+                stepTime = Math.abs(Math.floor(duration / range));
+                
+            let timer = setInterval(() => {
+                current += increment;
+                id.textContent = current;
+
+                if(current == end) {
+                    clearInterval(timer);
+                }
+            }, stepTime)
+        }
+    },
     mainSlider() {
         let swiperContainer = '.swiper-main';
         let interleaveOffset = 0.5;
@@ -103,6 +144,8 @@ const protoInit = {
         })
     },
 }
+
+protoInit.preloaderInit();
 
 document.addEventListener('DOMContentLoaded', () => {
     protoInit.mainSlider();
