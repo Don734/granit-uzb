@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon//apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./assets/favicon/site.webmanifest">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="./assets/css/main.css">
@@ -13,19 +17,29 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-6">
-                    <a href="#" class="navbar-brand">Logo</a>
+                    <a href="#" class="navbar-brand"><span class="icon"><img src="./assets/images/logo.png" alt=""></span></a>
                 </div>
-                <div class="col-6 d-flex justify-content-end">
-                    <button class="btn btn-sm btn-sign"><span class="icon"><i class="bi bi-person"></i></span> Войти</button>
+                <div class="col-6 d-flex align-items-center justify-content-end">
+                    <div class="dropdown-center">
+                        <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Рус
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Рус</a></li>
+                          <li><a class="dropdown-item" href="#">Uzb</a></li>
+                          <li><a class="dropdown-item" href="#">Eng</a></li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-sm btn-sign" data-bs-toggle="modal" data-bs-target="#signModal"><span class="icon"><i class="bi bi-person"></i></span> Войти</button>
                 </div>
             </div>
         </div>
     </header>
     <main class="main">
         <div class="row">
-            <div class="col col-lg-6 slider-col">
+            <div class="col col-lg-6 left-col">
                 <!-- Slider main container -->
-                <div class="swiper swiper-main">
+                <div class="swiper swiper-main showcase-tilt">
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
                         <!-- Slides -->
@@ -47,27 +61,34 @@
                     </div>
                     <!-- If we need pagination -->
                     <div class="swiper-pagination"></div>
-                
+                    <div class="swiper-divider"></div>
                     <!-- If we need navigation buttons -->
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+                    <div class="swiper-buttons">
+                        <div class="swiper-button-prev"><span class="icon"><i class="bi bi-chevron-left"></i></span></div>
+                        <div class="swiper-button-next"><span class="icon"><i class="bi bi-chevron-right"></i></span></div>
+                    </div>
                 </div>
             </div>
-            <div class="col col-lg-3 about-col">
-                <div class="wrap">
-                    <h3 class="col-title">О Компании</h3>
-                </div>
-            </div>
-            <div class="col col-lg-3">
-                <div class="row row-cols-1">
-                    <div class="col project-col">
+            <div class="col col-lg-6 right-col">
+                <div class="row">
+                    <div class="col col-6 about-col showcase-tilt">
                         <div class="wrap">
-                            <h3 class="col-title">Наши Проекты</h3>
+                            <h3 class="col-title">О Компании</h3>
+                            <div class="content"></div>
                         </div>
                     </div>
-                    <div class="col service-col">
-                        <div class="wrap">
-                            <h3 class="col-title">Наши Сервисы</h3>
+                    <div class="col col-6">
+                        <div class="row row-cols-1">
+                            <div class="col project-col showcase-tilt">
+                                <div class="wrap">
+                                    <h3 class="col-title">Наши Проекты</h3>
+                                </div>
+                            </div>
+                            <div class="col service-col showcase-tilt">
+                                <div class="wrap">
+                                    <h3 class="col-title">Наши Сервисы</h3>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -75,12 +96,43 @@
         </div>
     </main>
     <footer class="footer">
-
+        <p class="copyright">Copyright © 2024, Granit Uzb. All Right Reserved</p>
     </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="signModal" tabindex="-1" aria-labelledby="signModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput">Эл. почта</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                          <label for="floatingPassword">Пароль</label>
+                        </div>
+                        <div class="gap-2 d-flex justify-content-end">
+                            <button type="button" class="btn btn-outline-primary">Регистрация</button>
+                            <button type="submit" class="btn btn-success">Войти</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ball-wrap">
+        <div id="ball"></div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>
 </html>
