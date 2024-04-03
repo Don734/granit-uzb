@@ -24,6 +24,11 @@ a {
     text-decoration: none;
 }
 
+.subtitle {
+    font-size: 18px;
+    color: $white;
+}
+
 .header {
     position: absolute;
     top: 0;
@@ -85,6 +90,13 @@ a {
     .copyright {
         font-size: 16px;
         color: $white;
+    }
+}
+
+.modal {
+    .modal-title {
+        font-size: 22px !important;
+        font-weight: 500;
     }
 }
 
