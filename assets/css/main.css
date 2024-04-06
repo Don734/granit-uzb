@@ -13363,6 +13363,9 @@ a {
   color: #fff;
 }
 @media (max-width: 767.98px) {
+  .main .row .col .wrap .col-link.btm-20 {
+    bottom: 20px;
+  }
   .main .row .col .wrap .col-link.btm-50 {
     bottom: 50px;
   }
