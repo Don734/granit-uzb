@@ -150,8 +150,7 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    max-width: 70px;
-                    width: 100%;
+                    width: 70px;
                     height: 70px;
                     background-color: rgba($color: $custom-brown, $alpha: 0.9);
                     border-radius: 50%;
@@ -162,7 +161,9 @@
                     }
 
                     @include media-breakpoint-down(md) {
-                        bottom: 50px;
+                        &.btm-50 {
+                            bottom: 50px;
+                        }
                     }
                 }
 
@@ -320,6 +321,16 @@
                         opacity: 1;
                     }
                     
+                }
+
+                @include media-breakpoint-down(md) {
+                    margin-top: 20px;
+                }
+            }
+
+            @include media-breakpoint-down(md) {
+                .requisites-wrap {
+                    display: none;
                 }
             }
         }

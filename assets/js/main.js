@@ -43,7 +43,6 @@ const protoInit = {
     mainSlider() {
         let swiperContainer = '.swiper-main';
         let interleaveOffset = 0.5;
-
         let swiperOptions = {
             loop: true,
             pagination: {
@@ -53,6 +52,10 @@ const protoInit = {
     
                     return '<div class="slide-pagination-wrap ' + className + '">' + '<p class="counter">' + "0" + (index + 1) + '</p>' + '<span class="divider">|</span>' + '<p class="totalSlides">' + "0" + swiper.slides.length + '</p>' + '</div>';
                 }
+            },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
             },
             navigation: {
                 nextEl: '.swiper-button-next',
@@ -114,6 +117,30 @@ const protoInit = {
         };
         const swiper = new Swiper(swiperContainer, swiperOptions);
     },
+    partnerSlider() {
+        let swiperContainer = '.swiper-partner';
+        let swiperOptions = {
+            // Optional parameters
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 10,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 15,
+                },
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 30,
+                },
+            }
+        }
+        const swiper = new Swiper(swiperContainer, swiperOptions);
+    },
     ballCursor() {
         let cursor = document.querySelector('#ball');
     
@@ -150,4 +177,5 @@ protoInit.preloaderInit();
 document.addEventListener('DOMContentLoaded', () => {
     protoInit.mainSlider();
     protoInit.ballCursor();
+    protoInit.partnerSlider();
 })
